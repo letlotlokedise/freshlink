@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketplace - FreshLink Trade Hub</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <img src="logo.png" alt="FreshLink Logo" width="50" height="50" class="d-inline-block align-text-top me-2">
+                FreshLink Trade Hub
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="marketplace.html">Marketplace</a></li>
+                    <li class="nav-item"><a class="nav-link" href="for-providers.html">For Providers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="how-it-works.html">How It Works</a></li>
+                    <li class="nav-item"><a class="nav-link" href="testimonials.html">Testimonials</a></li>
+                    <li class="nav-item"><a class="nav-link" href="team.html">Team</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    
+                    <!-- Cart Icon -->
+                    <li class="nav-item ms-3">
+                        <a href="#" class="nav-link position-relative text-white" onclick="showCart()" style="font-size: 1.5rem;">
+                            🛒 
+                            <span id="cart-count" class="badge bg-warning text-dark position-absolute top-0 start-100 translate-middle">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-5 pt-5">
+        <h2 class="text-center mb-4">Marketplace - Fresh Local Deals</h2>
+        <p class="text-center text-muted mb-5">Buy directly from local farmers, carpenters and transporters in Gaborone</p>
+
+        <div class="row">
+            <!-- Product 1 -->
+            <div class="col-md-4 mb-4">
+                <div class="card card-hover h-100">
+                    <img src="spinach.jpg" class="card-img-top" alt="Fresh Spinach">
+                    <div class="card-body">
+                        <h5>Fresh Spinach - 5kg</h5>
+                        <p class="text-success fw-bold">P85</p>
+                        <small class="text-muted">By Kebone • Gaborone South</small>
+                        <button class="btn btn-success w-100 mt-3" onclick="addToCart('Fresh Spinach - 5kg', 85)">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="col-md-4 mb-4">
+                <div class="card card-hover h-100">
+                    <img src="chair.jpg" class="card-img-top" alt="Wooden Chair">
+                    <div class="card-body">
+                        <h5>Custom Wooden Chair</h5>
+                        <p class="text-success fw-bold">P450</p>
+                        <small class="text-muted">By Thabo Carpentry</small>
+                        <button class="btn btn-success w-100 mt-3" onclick="addToCart('Custom Wooden Chair', 450)">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="col-md-4 mb-4">
+                <div class="card card-hover h-100">
+                    <img src="delivery.jpg" class="card-img-top" alt="Delivery">
+                    <div class="card-body">
+                        <h5>Same Day Delivery (Gaborone)</h5>
+                        <p class="text-success fw-bold">P60</p>
+                        <small class="text-muted">Fast & Reliable Transport</small>
+                        <button class="btn btn-success w-100 mt-3" onclick="addToCart('Same Day Delivery', 60)">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div class="modal fade" id="cartModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">🛒 Your Cart</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="cart-items">
+                    <!-- Filled by JavaScript -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success" onclick="checkout()">Proceed to Checkout</button>
+                </div>
+            </div>
+        </
